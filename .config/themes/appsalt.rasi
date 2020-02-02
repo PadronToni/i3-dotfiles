@@ -1,0 +1,89 @@
+configuration {
+    show-icons:         true;
+    fake-transparency:  true;
+    fake-background:    \"background\";
+}
+
+* {
+    windowBg:           @bag@00;
+}
+
+#window {
+    location:           north;
+    anchor:             north;
+    width:              100%;
+}
+
+#mainbox {
+    orientation: horizontal;
+    margin:             5px;
+    children:   [ inputbar, listview ];
+}
+
+//  Inputbar  ----------------------------------------------
+
+#inputbarBorder {
+    orientation:        horizontal;
+    expand:             false;
+    children: [  dummy, inputbar, dummy ];
+}
+#inputbar {
+    border-radius:      0;
+    background-color:   @semitraBg;
+    expand:             false;
+    children:   [ textbox-search, entry ];
+}
+#case-indicator {
+    margin:             0 5px 0 0;
+}
+#entry {
+    width:              15em;
+    expand:             false;
+    padding:            0 15px;
+    vertical-align:     0.5;
+}
+#textbox-search {
+    padding:            0 15px;
+    border-radius:      0;
+    str:                "";
+    background-color:   @defaultBg;
+    vertical-align:     0.5;
+    expand:             false;
+}
+
+
+//  Listview  ----------------------------------------------
+
+#listview {
+    layout: horizontal;
+    margin:             0 0 0 5px;
+    padding:            0;
+    background-color:   transparent;
+    border-radius:      0;
+    expand:             true;
+}
+
+#element {
+    padding:            7 12 7 0;
+    spacing:            0;
+    border-radius:      0;
+}
+
+#element.normal {
+    background-color:   @semitraBg;
+}
+
+#element.alternate {
+    background-color:   @semitraBg;
+}
+
+#element-icon {
+    size:               16px;
+    padding:            0 12 0 12;
+}
+
+#element-text {
+    vertical-align:     0.5;
+    expand:             true;
+    width:              150;
+}

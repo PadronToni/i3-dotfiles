@@ -1,0 +1,28 @@
+sw_volume: 100
+audio_device_state:1:My Pulse Output
+audio_device_state:1:my_fifo
+state: stop
+current: 6
+random: 0
+repeat: 1
+single: 1
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Gesaffelstein/Albums/Aleph (2013)/01 Out of Line.mp3
+1:Gesaffelstein/Albums/Aleph (2013)/02 Pursuit.mp3
+2:Gesaffelstein/Albums/Aleph (2013)/03 Nameless.mp3
+3:Gesaffelstein/Albums/Aleph (2013)/04 Destinations.mp3
+4:Gesaffelstein/Albums/Aleph (2013)/05 Obsession.mp3
+5:Gesaffelstein/Albums/Aleph (2013)/06 Hellifornia.mp3
+6:Gesaffelstein/Albums/Aleph (2013)/07 Aleph.mp3
+7:Gesaffelstein/Albums/Aleph (2013)/08 Wall of Memories.mp3
+8:Gesaffelstein/Albums/Aleph (2013)/09 Duel.mp3
+9:Gesaffelstein/Albums/Aleph (2013)/10 Piece of Future.mp3
+10:Gesaffelstein/Albums/Aleph (2013)/11 Hate or Glory.mp3
+11:Gesaffelstein/Albums/Aleph (2013)/12 Values.mp3
+12:Gesaffelstein/Albums/Aleph (2013)/13 Trans.mp3
+13:Gesaffelstein/Albums/Aleph (2013)/14 Perfection.mp3
+playlist_end

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pidof dunst && killall dunst
+dunst &
+
+pidof dunst && notify-send "Dunst" "dunst has been reloaded"
+

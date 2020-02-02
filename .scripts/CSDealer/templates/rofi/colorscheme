@@ -1,0 +1,197 @@
+[variables]
+CSDdir = ~/.config/rofi/themes/colorscheme.rasi
+[content]
+#window {
+    fullscreen:         true;
+    location:           center;
+    anchor:             center;
+    background-color:   @semitraBg;
+    children: [ mainbox ];
+}
+
+
+#mainbox {
+    margin:             0 20% 0 20%;
+    children:   [ dummy, inputbarBorder, listview, message, csBorder, dummy ];
+}
+
+#inputbarBorder {
+    margin:             0;
+    children: [ dummy, inputbar, dummy ];
+}
+
+//  Listview    --------------------------------------------
+#listview {
+    columns:            3;
+    margin:             @mar@ @mar@ 0 @mar@;
+    padding:            @inPad@;
+    border-radius:      @radius@;
+    background-color:   @semitraBg;
+    expand:             false;
+}
+#element {
+    padding:            8px;
+    border-radius:      @radius@;
+    expand:             false;
+}
+
+// Color Scheme ----------------------------------
+#csBorder {
+    orientation:        horizontal;
+    margin:             0 @mar@ @mar@ @mar@;
+    padding:            0;
+    border-radius:      @radius@;
+    background-color:   @semitraBg;
+    expand:             false;
+    children:           [ textbox-colors, textbox-color0, textbox-color8, textbox-color1, textbox-color9, textbox-color2, textbox-color10, textbox-color3, textbox-color11, textbox-color4, textbox-color12, textbox-color5, textbox-color13, textbox-color6, textbox-color14, textbox-color7, textbox-color15  ];
+}
+#textbox-colors {
+    padding:            @pad@;
+    font:               "@font@ @fontSize@";
+    str:                "Color Scheme";
+    background-color:   @bg@;
+}
+#textbox-color0 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:               "@font@ @fontSize@";
+    str:                "0";
+	  text-color:   	    @color0@;
+	  border-color:   	  @color0@;
+    expand:             false;
+}
+#textbox-color8 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+	font:               "@font@ @fontSize@";
+	str:                "8";
+	text-color:   @color8@;
+	border-color:   @color8@;
+	expand:             false;
+}
+#textbox-color1 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:               "@font@ @fontSize@";
+    str:                "1";
+    text-color:   @color1@;
+    border-color:   @color1@;
+	expand:             false;
+}
+#textbox-color9 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "9";
+    text-color:   @color9@;
+    border-color:   @color9@;
+	expand:         false;
+}
+#textbox-color2 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "2";
+    text-color:   @color2@;
+    border-color:   @color2@;
+	expand:         false;
+}
+#textbox-color10 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "10";
+    text-color:   @color10@;
+    border-color:   @color10@;
+	expand:         false;
+}
+#textbox-color3 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "3";
+    text-color:   @color3@;
+    border-color:   @color3@;
+	expand:         false;
+}
+#textbox-color11 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "11";
+    text-color:   @color11@;
+    border-color:   @color11@;
+	expand:         false;
+}
+#textbox-color4 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "4";
+    text-color:   @color4@;
+    border-color:   @color4@;
+	expand:         false;
+}
+#textbox-color12 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "12";
+    text-color:   @color12@;
+    border-color:   @color12@;
+	expand:         false;
+}
+#textbox-color5 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "5";
+    text-color:   @color5@;
+    border-color:   @color5@;
+	expand:         false;
+}
+#textbox-color13 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "13";
+    text-color:   @color13@;
+    border-color:   @color13@;
+	expand:         false;
+}
+#textbox-color6 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "6";
+    text-color:   @color6@;
+    border-color:   @color6@;
+	expand:         false;
+}
+#textbox-color14 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "14";
+    text-color:   @color14@;
+    border-color:   @color14@;
+	expand:         false;
+}
+#textbox-color7 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:             0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "7";
+    text-color:   @color7@;
+    border-color:   @color7@;
+	expand:         false;
+}
+#textbox-color15 {
+    padding:            @pad@ @csPadHor@ @csPadBottom@ @csPadHor@;
+    border:         0 0 @csBorder@ 0;
+    font:           "@font@ @fontSize@";
+    str:            "15";
+    text-color:   @color15@;
+    border-color:   @color15@;
+	expand:         false;
+}

@@ -1,0 +1,58 @@
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
+
+! font
+URxvt.font:             xft:RobotoMonoNerdFont:regular:size=8:antialias=true,xft:Symbola
+URxvt.bolfFont:         xft:RobotoMonoNerdFont:bold:size=10:antialias=true,xft:Symbola
+URxvt.letterSpace:		0
+URxvt.lineSpace:		1
+URxvt.allow_bold:       true 
+
+! general settings
+URxvt*saveline:			4000
+URxvt*termName:			rxvt-256color
+URxvt*iso14755:			true
+URxvt*iso14755_52:		true
+URxvt*urgentOnBell:		true
+
+! appearance
+URxvt.scrollBar:		false
+URxvt.transparent:      false
+URxvt.fading:           0
+URxvt.cursorBlink:      true
+URxvt.cursorUnderline:  true
+URxvt.pointerBlank:     true
+URxvt.internalBorder:	25
+URxvt.intensityStyles:  true
+URxvt.geometry:			78x21
+URxvt*depth: 32
+
+URxvt.config-reload:        C-Down-Up 
+
+! ---------------
+! PERL EXTENSION
+! ---------------
+
+URxvt.perl-ext-common:	clipboard,resize-font,url-select,keyboard-select
+
+! macros for clipboard and selection
+URxvt.copyCommand:		xclip -i -selection clipboard
+URxvt.pasteCommand:		xclip -o -selection clipboard
+URxvt.keysym.M-c:		perl:clipboard:copy
+URxvt.keysym.M-v:		perl:clipboard:paste
+URxvt.keysym.M-C-v:		perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:	perl:keyboard-select:activate
+URxvt.keysym.M-s:		perl:keyboard-select:search
+! url-select
+URxvt.keysym.M-u:		perl:url-select:select_next
+URxvt.urlLauncher:		chromium
+URxvt.underlineURLs:	true
+URxvt.urlButton:		1     
+!! resize-font
+URxvt.resize-font.smaller: M-j
+URxvt.resize-font.bigger:  M-k
+
+! scroll one line
+URxvt.keysym.Shift-Up:		command:\033]720;1\007
+URxvt.keysym.Shift-Down:	command:\033]721;1\007

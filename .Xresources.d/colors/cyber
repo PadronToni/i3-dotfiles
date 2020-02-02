@@ -1,0 +1,45 @@
+
+! DEFINE COLORS
+#define BG #11292e
+#define FG #e0f2ec
+
+#define BLK #0e1f22
+#define RED #a85659
+#define GRN #668e8c
+#define YLW #c3b6a4
+#define BLU #326d78
+#define MAG #433c32
+#define CYN #386e74
+#define WHT #e0f2ec
+
+#define BBLK #1c4b4e
+#define BRED #eb8995
+#define BGRN #82aea9
+#define BYLW #e1d9ce
+#define BBLU #a7d2cd
+#define BMAG #aa9576
+#define BCYN #90c0bd
+#define BWHT #f0f8f3
+
+
+*.background: BG 
+*.foreground: FG
+*.cursorColor: BWHT
+
+*.color0: BLK 
+*.color1: RED
+*.color2: GRN
+*.color3: YLW
+*.color4: BLU
+*.color5: MAG
+*.color6: CYN
+*.color7: WHT
+*.color8: BBLK
+*.color9: BRED
+*.color10: BGRN
+*.color11: BYLW
+*.color12: BBLU
+*.color13: BMAG
+*.color14: BCYN
+*.color15: BWHT
+

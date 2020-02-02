@@ -1,0 +1,163 @@
+configuration {
+	combi-modi:     "drun,run";
+	sidebar-mode:   false;
+    show-icons:     false;
+
+//  Those change the "modi" names displayed
+	display-combi:        "舘";
+	display-window:       "舘";
+	display-run:          " ";
+	display-drun:         "";
+	display-keys:         "SHORT-KEYS";
+}
+
+* {
+    margin:                     0;
+    spacing:                    0;
+    border:                     0;
+    scrollbar:                  false;
+    text-color:                 #a9a9a9;
+    background-color:           transparent;
+    border-color:               #292929;
+  	font:                       "RobotoMonoNerdFont 8";
+    highlight:                  bold underline ;
+
+    /* Custom */
+    defaultBg:                  #292929;
+    semitraBg:                  #292929bb;
+    windowBg:                   #29292999;
+
+    radius:                     6;
+    mar:                        5;
+    pad:                        20;
+    inMar:                      20;
+    inPad:                      12;
+
+    csBorder:                   6px;
+    csPadHor:                   1%;
+    csPadBottom:                6px;
+
+
+    normal-normal-text:         #a9a9a9;
+    normal-urgent-text:         #a9635d;
+    normal-active-text:         #468459;
+    selected-normal-text:       #84763d;
+    selected-urgent-text:       @defaultBg;
+    selected-active-text:       @defaultBg;
+    selected-normal-background: @defaultBg;
+    selected-urgent-background: #ffbbb2;
+    selected-active-background: #9ddeaf;
+}
+
+#window {
+    location:           center;
+    anchor:             center;
+    background-color:   @windowBg;
+}
+
+
+#mainbox {
+    children:   [ inputbarBorder, listview, message ];
+}
+
+
+//  Inputbar  ----------------------------------------------
+
+#inputbarBorder {
+    margin:             5px;
+    orientation:        horizontal;
+    expand:             false;
+    children: [  dummy, inputbar, dummy ];
+}
+#inputbar {
+    border-radius:      6px;
+    background-color:   @semitraBg;
+    expand:             true;
+    children:   [ textbox-search, entry ];
+}
+#case-indicator {
+    margin:             0 5px 0 0;
+}
+#entry {
+    expand:             true;
+    padding:            10px;
+}
+#textbox-search {
+    padding:            10px 15px;
+    border-radius:      6px;
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+#dummy {
+    orientation:        horizontal;
+    expand:             true;
+}
+
+//  Mode Switcher ------------------------------------------------
+#mode-switcher {
+    border-radius:      0 6px 6px 0;
+    background-color:   @semitraBg;
+    expand:             false;
+}
+#button {
+    padding:            0 15px;
+  	font:               "RobotoMonoNerdFont 12";
+    text-color:         #84763d;
+}
+#button.selected {
+    border-radius:      6px;
+    text-color:         #84763d;
+    background-color:   @defaultBg;
+}
+
+//  Listview    --------------------------------------------
+listview {
+    margin:             0 5px 5px 5px;
+    border-radius:      6px;
+    background-color:   @semitraBg;
+}
+
+#element {
+    padding:            10px;
+    border-radius:      6px;
+}
+
+#element.normal.normal {
+    text-color:         @normal-normal-text;
+}
+#element.normal.urgent {
+    text-color:         @normal-urgent-text;
+}
+#element.normal.active {
+    text-color:         @normal-active-text;
+}
+#element.selected.normal {
+    background-color:   @selected-normal-background;
+    text-color:         @selected-normal-text;
+}
+#element.selected.urgent {
+    background-color:   @selected-urgent-background;
+    text-color:         @selected-urgent-text;
+}
+#element.selected.active {
+    background-color:   @selected-active-background;
+    text-color:         @selected-active-text;
+}
+#element.alternate.normal {
+    text-color:         @normal-normal-text;
+}
+#element.alternate.urgent {
+    text-color:         @normal-urgent-text;
+}
+#element.alternate.active {
+    text-color:         @normal-active-text;
+}
+
+#message {
+    margin:             5px;
+    padding:            15px;
+    border-radius:      6px;
+    background-color:   @defaultBg;
+}

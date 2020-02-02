@@ -1,0 +1,166 @@
+[variables]
+CSDdir = ~/.config/rofi/config.rasi
+[content]
+configuration {
+	combi-modi:     "drun,run";
+	sidebar-mode:   false;
+    show-icons:     false;
+
+//  Those change the "modi" names displayed
+	display-combi:        "舘";
+	display-window:       "舘";
+	display-run:          " ";
+	display-drun:         "";
+	display-keys:         "SHORT-KEYS";
+}
+
+* {
+    margin:                     0;
+    spacing:                    0;
+    border:                     0;
+    scrollbar:                  false;
+    text-color:                 @fg@;
+    background-color:           transparent;
+    border-color:               @bg@;
+  	font:                       "@font@ @fontSize@";
+    highlight:                  bold underline ;
+
+    /* Custom */
+    defaultBg:                  @bg@;
+    semitraBg:                  @bg@bb;
+    windowBg:                   @bg@99;
+
+    radius:                     6;
+    mar:                        5;
+    pad:                        20;
+    inMar:                      20;
+    inPad:                      12;
+
+    csBorder:                   6px;
+    csPadHor:                   1%;
+    csPadBottom:                6px;
+
+
+    normal-normal-text:         @fg@;
+    normal-urgent-text:         @color1@;
+    normal-active-text:         @color2@;
+    selected-normal-text:       @color3@;
+    selected-urgent-text:       @defaultBg;
+    selected-active-text:       @defaultBg;
+    selected-normal-background: @defaultBg;
+    selected-urgent-background: @color9@;
+    selected-active-background: @color10@;
+}
+
+#window {
+    location:           center;
+    anchor:             center;
+    background-color:   @windowBg;
+}
+
+
+#mainbox {
+    children:   [ inputbarBorder, listview, message ];
+}
+
+
+//  Inputbar  ----------------------------------------------
+
+#inputbarBorder {
+    margin:             @mar@;
+    orientation:        horizontal;
+    expand:             false;
+    children: [  dummy, inputbar, dummy ];
+}
+#inputbar {
+    border-radius:      @radius@;
+    background-color:   @semitraBg;
+    expand:             true;
+    children:   [ textbox-search, entry ];
+}
+#case-indicator {
+    margin:             0 @mar@ 0 0;
+}
+#entry {
+    expand:             true;
+    padding:            @inPad@;
+}
+#textbox-search {
+    padding:            @inPad@ @pad@;
+    border-radius:      @radius@;
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+#dummy {
+    orientation:        horizontal;
+    expand:             true;
+}
+
+//  Mode Switcher ------------------------------------------------
+#mode-switcher {
+    border-radius:      0 @radius@ @radius@ 0;
+    background-color:   @semitraBg;
+    expand:             false;
+}
+#button {
+    padding:            0 @pad@;
+  	font:               "@font@ 12";
+    text-color:         @color3@;
+}
+#button.selected {
+    border-radius:      @radius@;
+    text-color:         @color3@;
+    background-color:   @defaultBg;
+}
+
+//  Listview    --------------------------------------------
+listview {
+    margin:             0 @mar@ @mar@ @mar@;
+    border-radius:      @radius@;
+    background-color:   @semitraBg;
+}
+
+#element {
+    padding:            10px;
+    border-radius:      @radius@;
+}
+
+#element.normal.normal {
+    text-color:         @normal-normal-text;
+}
+#element.normal.urgent {
+    text-color:         @normal-urgent-text;
+}
+#element.normal.active {
+    text-color:         @normal-active-text;
+}
+#element.selected.normal {
+    background-color:   @selected-normal-background;
+    text-color:         @selected-normal-text;
+}
+#element.selected.urgent {
+    background-color:   @selected-urgent-background;
+    text-color:         @selected-urgent-text;
+}
+#element.selected.active {
+    background-color:   @selected-active-background;
+    text-color:         @selected-active-text;
+}
+#element.alternate.normal {
+    text-color:         @normal-normal-text;
+}
+#element.alternate.urgent {
+    text-color:         @normal-urgent-text;
+}
+#element.alternate.active {
+    text-color:         @normal-active-text;
+}
+
+#message {
+    margin:             @mar@;
+    padding:            @pad@;
+    border-radius:      @radius@;
+    background-color:   @defaultBg;
+}

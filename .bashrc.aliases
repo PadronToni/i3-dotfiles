@@ -1,0 +1,49 @@
+#
+# ~/.bashrc.aliases
+#
+
+# -----------------------------------------------------------
+# VARIABLES
+# -----------------------------------------------------------
+
+# -----------------------------------------------------------
+# ALIAS
+# -----------------------------------------------------------
+
+# Various
+alias la='ls --color=auto -l -a'
+alias cl='clear'
+alias nuke='rm -rf'
+alias dp="(urxvt &) 1>/dev/null"
+alias tpt="cd ~/projects/CSDealer/templates; la"
+alias conf="cd ~/.config; la"
+
+# Color Scripts
+# alias colorbar='~/.scripts/./colorbar.sh'
+# alias colorpanes='~/.scripts/./colorpanes.sh'
+# alias colorblocks='~/.scripts/./colorblocks.sh'
+# alias blocks='~/.scripts/./blocks.sh'
+
+# Configs
+alias ci3='nvim ~/.config/i3/config'
+
+# Xorg
+alias xsource='nvim ~/.Xresources'
+alias xreload='xrdb ~/.Xresources && ~/.scripts/./transparentBg.sh && ~/.scripts/./uproficonfig.sh'
+
+
+alias pacrepo='sudo reflector -l 20 -f 10 --save /etc/pacman.d/mirrorlist'
+alias pacman='sudo pacman'
+alias journalctl='sudo journalctl'
+alias pacu='sudo pacman -Syu --noconfirm'
+alias remo='sudo pacman -Rs'
+alias systemctl='sudo systemctl'
+alias se='ls /usr/bin | grep'
+
+export QT_STYLE_OVERRIDE=gtk
+export QT_SELECT=qt5
+
+if [[ $LANG = '' ]]; then
+	export LANG=en_US.UTF-8
+fi
+

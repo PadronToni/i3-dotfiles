@@ -1,0 +1,59 @@
+configuration {
+    fake-transparency:  true;
+    fake-background:    "background";
+}
+* {
+    font:               "RobotoMonoNerdFont 20";
+    windowBg:           #292929bb;
+}
+
+#window {
+    fullscreen:         true;
+    location:           center;
+    anchor:             center;
+    background-color:   @windowBg;
+    children: [ dummy, mainbox, dummy ];
+}
+
+#mainbox {
+    margin:             0;
+    children:   [ textBorder, listview ];
+}
+
+#textBorder {
+    orientation:        horizontal;
+    margin:             0 0 5px 0;
+    border-radius:      6px;
+    expand:             false;
+    children:   [ textbox-title, dummy ];
+}
+
+#textbox-title {
+    padding:            10px 15px 10px 15px;
+    border-radius:      6px;
+    font:               "RobotoMonoNerdFont 8";
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+//  Listview    --------------------------------------------
+#listview {
+    margin:             0;
+    columns:            100;
+    lines:              1;
+    border-radius:      6px;
+    background-color:   @semitraBg;
+    expand:             false;
+}
+
+#element {
+    orientation:        horizontal;
+    padding:            45px;
+    border-radius:      6px;
+    expand:             true;
+}
+
+#element-text {
+    horizontal-align:   0.5;
+}

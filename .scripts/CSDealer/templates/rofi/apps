@@ -1,0 +1,75 @@
+[variables]
+CSDdir = ~/.config/rofi/themes/apps.rasi
+[content]
+configuration {
+    show-icons:         true;
+}
+
+* {
+    windowBg:           @bg@00;
+}
+
+#window {
+    location:           center;
+    anchor:             center;
+    width:              50%;
+}
+
+#mainbox {
+    children:   [ inputbarBorder, listview ];
+}
+
+//  Inputbar  ----------------------------------------------
+
+#inputbarBorder {
+    margin:             @mar@;
+    orientation:        horizontal;
+    expand:             false;
+    children: [  dummy, inputbar, dummy ];
+}
+#inputbar {
+    border-radius:      @radius@;
+    background-color:   @semitraBg;
+    expand:             true;
+    children:   [ textbox-search, entry ];
+}
+#case-indicator {
+    margin:             0 @mar@ 0 0;
+}
+#entry {
+    expand:             true;
+    padding:            @inPad@;
+}
+#textbox-search {
+    padding:            @inPad@ @pad@ @inPad@ @pad@;
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+
+//  Listview  ----------------------------------------------
+
+#listview {
+    lines:              1;
+    columns:            5;
+    margin:             0 @mar@ @mar@ @mar@;
+    padding:            0;
+    border-radius:      @radius@;
+    expand:             false;
+}
+
+#element {
+    orientation:        vertical;
+}
+
+#element-icon {
+    size:               48px;
+    padding:            10px;
+}
+
+#element-text {
+    vertical-align:     0.5;
+    horizontal-align:   0.5;
+    expand:             true;
+}

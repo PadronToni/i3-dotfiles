@@ -1,0 +1,194 @@
+#window {
+    fullscreen:         true;
+    location:           center;
+    anchor:             center;
+    background-color:   @semitraBg;
+    children: [ mainbox ];
+}
+
+
+#mainbox {
+    margin:             0 20% 0 20%;
+    children:   [ dummy, inputbarBorder, listview, message, csBorder, dummy ];
+}
+
+#inputbarBorder {
+    margin:             0;
+    children: [ dummy, inputbar, dummy ];
+}
+
+//  Listview    --------------------------------------------
+#listview {
+    columns:            3;
+    margin:             5px 5px 0 5px;
+    padding:            10px;
+    border-radius:      6px;
+    background-color:   @semitraBg;
+    expand:             false;
+}
+#element {
+    padding:            8px;
+    border-radius:      6px;
+    expand:             false;
+}
+
+// Color Scheme ----------------------------------
+#csBorder {
+    orientation:        horizontal;
+    margin:             0 5px 5px 5px;
+    padding:            0;
+    border-radius:      6px;
+    background-color:   @semitraBg;
+    expand:             false;
+    children:           [ textbox-colors, textbox-color0, textbox-color8, textbox-color1, textbox-color9, textbox-color2, textbox-color10, textbox-color3, textbox-color11, textbox-color4, textbox-color12, textbox-color5, textbox-color13, textbox-color6, textbox-color14, textbox-color7, textbox-color15  ];
+}
+#textbox-colors {
+    padding:            15px;
+    font:               "RobotoMonoNerdFont 8";
+    str:                "Color Scheme";
+    background-color:   #292929;
+}
+#textbox-color0 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:               "RobotoMonoNerdFont 8";
+    str:                "0";
+	  text-color:   	    #3d3d3d;
+	  border-color:   	  #3d3d3d;
+    expand:             false;
+}
+#textbox-color8 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+	font:               "RobotoMonoNerdFont 8";
+	str:                "8";
+	text-color:   #707070;
+	border-color:   #707070;
+	expand:             false;
+}
+#textbox-color1 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:               "RobotoMonoNerdFont 8";
+    str:                "1";
+    text-color:   #a9635d;
+    border-color:   #a9635d;
+	expand:             false;
+}
+#textbox-color9 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "9";
+    text-color:   #ffbbb2;
+    border-color:   #ffbbb2;
+	expand:         false;
+}
+#textbox-color2 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "2";
+    text-color:   #468459;
+    border-color:   #468459;
+	expand:         false;
+}
+#textbox-color10 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "10";
+    text-color:   #9ddeaf;
+    border-color:   #9ddeaf;
+	expand:         false;
+}
+#textbox-color3 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "3";
+    text-color:   #84763d;
+    border-color:   #84763d;
+	expand:         false;
+}
+#textbox-color11 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "11";
+    text-color:   #e0ce91;
+    border-color:   #e0ce91;
+	expand:         false;
+}
+#textbox-color4 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "4";
+    text-color:   #5879af;
+    border-color:   #5879af;
+	expand:         false;
+}
+#textbox-color12 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "12";
+    text-color:   #b3d1ff;
+    border-color:   #b3d1ff;
+	expand:         false;
+}
+#textbox-color5 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "5";
+    text-color:   #9c6594;
+    border-color:   #9c6594;
+	expand:         false;
+}
+#textbox-color13 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "13";
+    text-color:   #fabdf0;
+    border-color:   #fabdf0;
+	expand:         false;
+}
+#textbox-color6 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "6";
+    text-color:   #008592;
+    border-color:   #008592;
+	expand:         false;
+}
+#textbox-color14 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "14";
+    text-color:   #79e0ed;
+    border-color:   #79e0ed;
+	expand:         false;
+}
+#textbox-color7 {
+    padding:            15px 1% 6px 1%;
+    border:             0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "7";
+    text-color:   #cfcfcf;
+    border-color:   #cfcfcf;
+	expand:         false;
+}
+#textbox-color15 {
+    padding:            15px 1% 6px 1%;
+    border:         0 0 6px 0;
+    font:           "RobotoMonoNerdFont 8";
+    str:            "15";
+    text-color:   #ffffff;
+    border-color:   #ffffff;
+	expand:         false;
+}

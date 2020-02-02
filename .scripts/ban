@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# default font
+font_dir=$HOME/.figlet-fonts/
+font=$font_dir/3d.flf
+
+# flags parse
+while test $# -gt 0; do
+    case "$1" in
+    -h|--help)
+        echo ""
+        echo -e "Usage: ban [OPTIONS]... [MESSAGE]... "
+        echo -e "\033[1mban\033[0m is a tiny script that pipes figlet output in lolcat, for fat ass people (like me)." | lolcat
+        echo -e "Options:"
+        echo -e "-h, --help                 show this message"
+        echo -e "-f, --font=FONTNAME        specify available font to use from \"$font_dir\""
+        echo -e "-l, --list                 lists all available fonts in \"$font_dir\""
+        echo ""
+        echo -e "If no option is given, then it will write the messsage with default 3d font."
+        echo ""
+        exit 0
+    ;;
+
+    -f|--font)
+        shift 
+        if [[ $1 =~ [.*\.flf] ]]; then font=$font_dir"$1"; else font=$font_dir"$1".flf; fi
+        shift
+        break 
+    ;;
+
+    -l|--list)
+        echo -e "\nHere is the list of available fonts in \"$font_dir\"\n"
+        ls $font_dir | awk '/.*\.flf/'
+        echo ""
+        exit 0
+    ;;
+
+    *)
+        break
+    ;;
+    esac
+done
+
+# Print content
+echo ""
+figlet -t -f "$font" "$@" | lolcat -f -l

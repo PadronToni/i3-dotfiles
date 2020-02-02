@@ -1,0 +1,72 @@
+configuration {
+    show-icons:         true;
+}
+
+* {
+    windowBg:           #29292900;
+}
+
+#window {
+    location:           center;
+    anchor:             center;
+    width:              50%;
+}
+
+#mainbox {
+    children:   [ inputbarBorder, listview ];
+}
+
+//  Inputbar  ----------------------------------------------
+
+#inputbarBorder {
+    margin:             5px;
+    orientation:        horizontal;
+    expand:             false;
+    children: [  dummy, inputbar, dummy ];
+}
+#inputbar {
+    border-radius:      6px;
+    background-color:   @semitraBg;
+    expand:             true;
+    children:   [ textbox-search, entry ];
+}
+#case-indicator {
+    margin:             0 5px 0 0;
+}
+#entry {
+    expand:             true;
+    padding:            10px;
+}
+#textbox-search {
+    padding:            10px 15px 10px 15px;
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+
+//  Listview  ----------------------------------------------
+
+#listview {
+    lines:              1;
+    columns:            5;
+    margin:             0 5px 5px 5px;
+    padding:            0;
+    border-radius:      6px;
+    expand:             false;
+}
+
+#element {
+    orientation:        vertical;
+}
+
+#element-icon {
+    size:               48px;
+    padding:            10px;
+}
+
+#element-text {
+    vertical-align:     0.5;
+    horizontal-align:   0.5;
+    expand:             true;
+}

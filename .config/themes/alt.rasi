@@ -1,0 +1,59 @@
+
+/**
+ * ROFI Dynamic Color Theme
+ * User: KLR
+ */
+
+#window {
+    fullscreen:         true;
+    location:           center;
+    anchor:             center;
+    background-color:   @semitraBg;
+    children: [ mainbox ];
+}
+
+
+#mainbox {
+    margin:             0 35% 0 35%;
+    children:   [ dummy, inputbar, listview, message, dummy ];
+}
+
+mainBorder {
+}
+
+//  Inputbar  ----------------------------------------------
+#inputbar {
+    margin:             5px 5px 0 5px;
+    border-radius:      6px;
+    background-color:   @semitraBg;
+    expand:             false;
+    children:   [ textbox-search, entry ];
+}
+#entry {
+    orientation:        vertical;
+    width:              20em;
+    padding:            10px;
+}
+#textbox-search {
+    padding:            10px 15px 10px 15px;
+    border-radius:      6px;
+    font:               "FontAwesome 8"; 
+    str:                "";
+    text-color:         #ceb5ce;
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+//  Listview    --------------------------------------------
+#listview {
+    margin:             5px 5px 0 5px;
+    padding:            15px;
+    border-radius:      6px;
+    background-color:   @defaultBg;
+    expand:             false;
+}
+#element {
+    padding: 6px;
+}
+
+

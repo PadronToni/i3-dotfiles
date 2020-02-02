@@ -1,0 +1,62 @@
+[variables]
+CSDdir = ~/.config/rofi/themes/options.rasi
+[content]
+configuration {
+    fake-transparency:  true;
+    fake-background:    "background";
+}
+* {
+    font:               "@font@ 20";
+    windowBg:           @bg@bb;
+}
+
+#window {
+    fullscreen:         true;
+    location:           center;
+    anchor:             center;
+    background-color:   @windowBg;
+    children: [ dummy, mainbox, dummy ];
+}
+
+#mainbox {
+    margin:             0;
+    children:   [ textBorder, listview ];
+}
+
+#textBorder {
+    orientation:        horizontal;
+    margin:             0 0 @mar@ 0;
+    border-radius:      @radius@;
+    expand:             false;
+    children:   [ textbox-title, dummy ];
+}
+
+#textbox-title {
+    padding:            @inPad@ @pad@ @inPad@ @pad@;
+    border-radius:      @radius@;
+    font:               "@font@ @fontSize@";
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+//  Listview    --------------------------------------------
+#listview {
+    margin:             0;
+    columns:            100;
+    lines:              1;
+    border-radius:      @radius@;
+    background-color:   @semitraBg;
+    expand:             false;
+}
+
+#element {
+    orientation:        horizontal;
+    padding:            45px;
+    border-radius:      @radius@;
+    expand:             true;
+}
+
+#element-text {
+    horizontal-align:   0.5;
+}

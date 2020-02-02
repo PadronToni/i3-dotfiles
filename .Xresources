@@ -1,0 +1,17 @@
+! -------------------------------------------------------------
+! IMPORTS
+! -------------------------------------------------------------
+
+! Colors - all color files are available in ~/.colors
+#include ".Xresources.d/colors/set"
+
+! Configs - all files that contains configs for other programs
+#include ".Xresources.d/xft"
+#include ".Xresources.d/urxvt"
+
+! -------------------------------------------------------------
+! FONTS
+! -------------------------------------------------------------
+*.font:  RobotoMonoNerdFont   regular   9
+
+
