@@ -1,45 +1,22 @@
 
-! DEFINE COLORS
-#define BG #212121
-#define FG #EEFFFF
+*.background: #202020
+*.foreground: #FFFDF0
+*.cursorColor: #4A4A4A
 
-#define BLK #4A4A4A
-#define RED #F07178
-#define GRN #C3E88D
-#define YLW #FFCB6B
-#define BLU #82AAFF
-#define MAG #C792EA
-#define CYN #89DDFF
-#define WHT #EEFFFF
+*.color0: #2b2b2b
+*.color1: #F07178
+*.color2: #C3E88D
+*.color3: #FFCB6B
+*.color4: #82AAFF
+*.color5: #C792EA
+*.color6: #89DDFF
+*.color7: #EEFFFF
 
-#define BBLK #4A4A4A
-#define BRED #F07178
-#define BGRN #C3E88D
-#define BYLW #FFCB6B
-#define BBLU #82AAFF
-#define BMAG #C792EA
-#define BCYN #89DDFF
-#define BWHT #EEFFFF
-
-
-*.background: BG 
-*.foreground: FG
-*.cursorColor: BWHT
-
-*.color0: BLK 
-*.color1: RED
-*.color2: GRN
-*.color3: YLW
-*.color4: BLU
-*.color5: MAG
-*.color6: CYN
-*.color7: WHT
-*.color8: BBLK
-*.color9: BRED
-*.color10: BGRN
-*.color11: BYLW
-*.color12: BBLU
-*.color13: BMAG
-*.color14: BCYN
-*.color15: BWHT
-
+*.color8: #4A4A4A
+*.color9: #F2858B
+*.color10: #CFEDA4
+*.color11: #FFD485
+*.color12: #96B8FF
+*.color13: #D3A9EF
+*.color14: #A3E5FF
+*.color15: #FFFFFF

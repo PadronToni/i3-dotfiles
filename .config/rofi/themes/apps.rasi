@@ -1,25 +1,29 @@
 configuration {
     show-icons:         true;
+    fake-transparency:  true;
+    fake-background:    "background";
 }
 
 * {
-    windowBg:           #29292900;
+    windowBg:           #303030a0;
 }
 
 #window {
-    location:           center;
-    anchor:             center;
-    width:              50%;
+    fullscreen:         true;
+    children:   [ dummy, mainbox, dummy ];
 }
 
 #mainbox {
+    margin:             0 25%;
+    spacing:            5px;
+    expand:             false;
     children:   [ inputbarBorder, listview ];
 }
 
 //  Inputbar  ----------------------------------------------
 
 #inputbarBorder {
-    margin:             5px;
+    margin:             0;
     orientation:        horizontal;
     expand:             false;
     children: [  dummy, inputbar, dummy ];
@@ -49,8 +53,6 @@ configuration {
 
 #listview {
     lines:              1;
-    columns:            5;
-    margin:             0 5px 5px 5px;
     padding:            0;
     border-radius:      6px;
     expand:             false;
@@ -58,15 +60,17 @@ configuration {
 
 #element {
     orientation:        vertical;
+    expand:             false;
 }
 
 #element-icon {
     size:               48px;
     padding:            10px;
+    expand:             false;
 }
 
 #element-text {
     vertical-align:     0.5;
     horizontal-align:   0.5;
-    expand:             true;
+    expand:             false;
 }

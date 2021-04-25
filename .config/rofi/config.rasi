@@ -16,16 +16,16 @@ configuration {
     spacing:                    0;
     border:                     0;
     scrollbar:                  false;
-    text-color:                 #a9a9a9;
+    text-color:                 #a0a0a0;
     background-color:           transparent;
-    border-color:               #292929;
+    border-color:               #232323;
   	font:                       "RobotoMonoNerdFont 8";
     highlight:                  bold underline ;
 
     /* Custom */
-    defaultBg:                  #292929;
-    semitraBg:                  #292929bb;
-    windowBg:                   #29292999;
+    defaultBg:                  #232323;
+    semitraBg:                  #232323aa;
+    windowBg:                   #23232399;
 
     radius:                     6;
     mar:                        5;
@@ -38,15 +38,15 @@ configuration {
     csPadBottom:                6px;
 
 
-    normal-normal-text:         #a9a9a9;
-    normal-urgent-text:         #a9635d;
-    normal-active-text:         #468459;
-    selected-normal-text:       #84763d;
+    normal-normal-text:         #a0a0a0;
+    normal-urgent-text:         #d370a3;
+    normal-active-text:         #6d9e3f;
+    selected-normal-text:       #b58858;
     selected-urgent-text:       @defaultBg;
     selected-active-text:       @defaultBg;
     selected-normal-background: @defaultBg;
-    selected-urgent-background: #ffbbb2;
-    selected-active-background: #9ddeaf;
+    selected-urgent-background: #ffa7da;
+    selected-active-background: #a3d572;
 }
 
 #window {
@@ -104,11 +104,11 @@ configuration {
 #button {
     padding:            0 15px;
   	font:               "RobotoMonoNerdFont 12";
-    text-color:         #84763d;
+    text-color:         #b58858;
 }
 #button.selected {
     border-radius:      6px;
-    text-color:         #84763d;
+    text-color:         #b58858;
     background-color:   @defaultBg;
 }
 

@@ -1,0 +1,38 @@
+! bg
+
+! grey (dark to light)
+! no place but used by tmux and awesome #202a34
+*background:   #20252c
+*color0:       #222c36
+
+! primary (dark to light)
+*color6:       #2e8382
+*color2:       #3d8e8e
+*color14:      #42a3a5
+
+! secondary (dark to light)
+*color5:       #58527d
+*color4:       #6e6b8f
+*color13:      #8685a1
+
+! alert (dark to light)
+*color1:       #5e3a7b
+*color9:       #6c4086
+*color3:       #7c4790
+
+! fg
+
+! grey (dark to light)
+*color8:       #b0bec5
+*foreground:   #cfd8dc
+
+! primary (dark to light)
+*color10:      #b2ebf2
+*color7:       #e0f7fa
+
+! secondary (dark to light)
+*color12:      #c8e6c9
+*color15:      #e8f5e9
+
+! alert (dark to light)
+*color11:      #d8f5e9

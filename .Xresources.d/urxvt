@@ -11,7 +11,7 @@ URxvt.allow_bold:       true
 
 ! general settings
 URxvt*saveline:			4000
-URxvt*termName:			rxvt-256color
+! URxvt*termName:			rxvt-256color
 URxvt*iso14755:			true
 URxvt*iso14755_52:		true
 URxvt*urgentOnBell:		true
@@ -19,22 +19,29 @@ URxvt*urgentOnBell:		true
 ! appearance
 URxvt.scrollBar:		false
 URxvt.transparent:      false
-URxvt.fading:           0
+! URxvt.fading:           0
 URxvt.cursorBlink:      true
 URxvt.cursorUnderline:  true
 URxvt.pointerBlank:     true
 URxvt.internalBorder:	25
-URxvt.intensityStyles:  true
+URxvt.borderColor:	    #232323
+! URxvt.intensityStyles:  true
 URxvt.geometry:			78x21
 URxvt*depth: 32
 
-URxvt.config-reload:        C-Down-Up 
+/* Needs to be disabled for C-S keybindings to work */
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+/* Copy paste from keyboard*/
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! ---------------
 ! PERL EXTENSION
 ! ---------------
 
-URxvt.perl-ext-common:	clipboard,resize-font,url-select,keyboard-select
+URxvt.perl-ext-common:	config-reload,clipboard,resize-font,url-select,keyboard-select
 
 ! macros for clipboard and selection
 URxvt.copyCommand:		xclip -i -selection clipboard
@@ -52,7 +59,3 @@ URxvt.urlButton:		1
 !! resize-font
 URxvt.resize-font.smaller: M-j
 URxvt.resize-font.bigger:  M-k
-
-! scroll one line
-URxvt.keysym.Shift-Up:		command:\033]720;1\007
-URxvt.keysym.Shift-Down:	command:\033]721;1\007

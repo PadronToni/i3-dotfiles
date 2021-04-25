@@ -27,7 +27,7 @@ configuration {
 
     /* Custom */
     defaultBg:                  @bg@;
-    semitraBg:                  @bg@bb;
+    semitraBg:                  @bg@aa;
     windowBg:                   @bg@99;
 
     radius:                     6;

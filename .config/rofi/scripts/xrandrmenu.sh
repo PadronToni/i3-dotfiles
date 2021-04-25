@@ -4,6 +4,7 @@
 monitor0="eDP1"
 monitor1="HDMI1"
 theme="themes/options.rasi"
+item_size=6
 
 # options to be displyed
 option0="activate all monitors"
@@ -12,7 +13,7 @@ option2=""
 option3="monitor $monitor0 primary"
 option4="monitor $monitor1 primary"
 option5="monitor $monitor1 same as $monitor0"
-option6="+"
+option6=" + "
 option7="monitor $monitor1 left of $monitor0"
 option8="monitor $monitor1 above $monitor0"
 option9="monitor $monitor1 below $monitor0"
@@ -23,13 +24,27 @@ option12="rotate monitor $monitor1 normal"
 # Variable passed to rofi
 options="$option2\n$option6\n$option1"
 
+# ---------------------------------------------------------
+# FUNCTIONS
+# ---------------------------------------------------------
+
+gen_size () {
+    local counter=$( echo -e "$options" | wc -l )
+    echo $(( $counter*$item_size ))
+}
+
 refresh() {
     killall "picom"
     nitrogen --restore
     i3-msg restart
 }
 
-res="$(echo -e "$options" | rofi -dmenu -theme ${theme} -theme-str "#textbox-title { str: \"Monitors\"; } #mainbox { margin: 0 30%;  }" -selected-row 1)"
+# ---------------------------------------------------------
+# START
+# ---------------------------------------------------------
+
+res="$(echo -e "$options" | rofi -dmenu -theme ${theme} -theme-str "#textbox-title { str: \"Monitors\"; } #mainbox { width: $( gen_size )em; }" -selected-row 1)"
+
 case $res in
     $option0)
         xrandr --auto

@@ -109,6 +109,8 @@ visualizer_look = ┇┇
 ##
 message_delay_time = 1
 #
+
+
 ##### song format #####
 ##
 ## For a song format you can use:
@@ -186,7 +188,7 @@ alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 #
 alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 #
-current_item_prefix = $(cyan)$r$b
+current_item_prefix = $b$r
 #
 current_item_suffix = $/r$(end)$/b
 #
@@ -194,9 +196,9 @@ current_item_inactive_column_prefix = $(magenta)$r
 #
 current_item_inactive_column_suffix = $/r$(end)
 #
-#now_playing_prefix = $b
+now_playing_prefix = $b 
 #
-#now_playing_suffix = $/b
+now_playing_suffix = "◁$/b"
 #
 #browser_playlist_prefix = "$2playlist$9 "
 #
@@ -221,6 +223,8 @@ current_item_inactive_column_suffix = $/r$(end)
 #
 #browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 #
+
+
 ##### columns settings #####
 ##
 ## syntax of song columns list format is "column column etc."

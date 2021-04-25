@@ -2,6 +2,7 @@
 #!/bin/bash
 
 theme="themes/options.rasi"
+item_size=5
 
 ### Options ###
 screen=""
@@ -11,7 +12,20 @@ delay="靖"
 # Variable passed to rofi
 options="$window\n$screen\n$area\n$delay"
 
-res="$(echo -e "${options}" | rofi -dmenu -theme ${theme} -theme-str "configuration { fake-transparency: false; } #textbox-title { str: \"Screenshot\"; } #mainbox { margin: 0 28%;  }" -selected-row 1)"
+# ---------------------------------------------------------
+# FUNCTIONS
+# ---------------------------------------------------------
+
+gen_size () {
+    local counter=$( echo -e "$options" | wc -l )
+    echo $(( $counter*$item_size ))
+}
+
+# ---------------------------------------------------------
+# START
+# ---------------------------------------------------------
+
+res="$(echo -e "${options}" | rofi -dmenu -theme ${theme} -theme-str "configuration { fake-transparency: false; } #textbox-title { str: \"Screenshot\"; } #mainbox { width: $( gen_size )em; }" -selected-row 1)"
 
 case ${res} in
     ${screen})
@@ -30,4 +44,3 @@ case ${res} in
         sleep 4; scrot ~/Immagini/Screenshots/screenshot_%F_%H%M%S.png
         ;;
 esac
-

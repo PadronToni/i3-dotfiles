@@ -1,28 +1,43 @@
-sw_volume: 100
+sw_volume: 69
 audio_device_state:1:My Pulse Output
 audio_device_state:1:my_fifo
-state: stop
-current: 6
+state: pause
+current: 12
+time: 4.837000
 random: 0
-repeat: 1
-single: 1
+repeat: 0
+single: 0
 consume: 0
 crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Gesaffelstein/Albums/Aleph (2013)/01 Out of Line.mp3
-1:Gesaffelstein/Albums/Aleph (2013)/02 Pursuit.mp3
-2:Gesaffelstein/Albums/Aleph (2013)/03 Nameless.mp3
-3:Gesaffelstein/Albums/Aleph (2013)/04 Destinations.mp3
-4:Gesaffelstein/Albums/Aleph (2013)/05 Obsession.mp3
-5:Gesaffelstein/Albums/Aleph (2013)/06 Hellifornia.mp3
-6:Gesaffelstein/Albums/Aleph (2013)/07 Aleph.mp3
-7:Gesaffelstein/Albums/Aleph (2013)/08 Wall of Memories.mp3
-8:Gesaffelstein/Albums/Aleph (2013)/09 Duel.mp3
-9:Gesaffelstein/Albums/Aleph (2013)/10 Piece of Future.mp3
-10:Gesaffelstein/Albums/Aleph (2013)/11 Hate or Glory.mp3
-11:Gesaffelstein/Albums/Aleph (2013)/12 Values.mp3
-12:Gesaffelstein/Albums/Aleph (2013)/13 Trans.mp3
-13:Gesaffelstein/Albums/Aleph (2013)/14 Perfection.mp3
+0:August Burns Red/Constellations/01 Thirty and Seven.mp3
+1:August Burns Red/Constellations/02 Existence.mp3
+2:August Burns Red/Constellations/03 Ocean of Apathy.mp3
+3:August Burns Red/Constellations/04 White Washed.mp3
+4:August Burns Red/Constellations/05 Marianas Trench.mp3
+5:August Burns Red/Constellations/06 The Escape Artist.mp3
+6:August Burns Red/Constellations/07 Indonesia.mp3
+7:August Burns Red/Constellations/08 Paradox.mp3
+8:August Burns Red/Constellations/09 Meridian.mp3
+9:August Burns Red/Constellations/10 Rationalist.mp3
+10:August Burns Red/Constellations/11 Meddler.mp3
+11:August Burns Red/Constellations/12 Crusades.mp3
+12:August Burns Red/Leveler (Deluxe Edition)/01 - Empire.mp3
+13:August Burns Red/Leveler (Deluxe Edition)/02 - Internal Cannon.mp3
+14:August Burns Red/Leveler (Deluxe Edition)/03 - Divisions.mp3
+15:August Burns Red/Leveler (Deluxe Edition)/04 - Cutting The Ties.mp3
+16:August Burns Red/Leveler (Deluxe Edition)/05 - Pangea.mp3
+17:August Burns Red/Leveler (Deluxe Edition)/06 - Carpe Diem.mp3
+18:August Burns Red/Leveler (Deluxe Edition)/08 - Salt & Light.mp3
+19:August Burns Red/Leveler (Deluxe Edition)/09 - Poor Millionaire.mp3
+20:August Burns Red/Leveler (Deluxe Edition)/10 - 1162011.mp3
+21:August Burns Red/Leveler (Deluxe Edition)/11 - Boys Of Fall.mp3
+22:August Burns Red/Leveler (Deluxe Edition)/12 - Leveler.mp3
+23:August Burns Red/Leveler (Deluxe Edition)/13 - Internal Cannon (Acoustic).mp3
+24:August Burns Red/Leveler (Deluxe Edition)/14 - Pangea (Performed By The Bells).mp3
+25:August Burns Red/Leveler (Deluxe Edition)/15 - Boys of Fall (Performed by Zachery Veilleux).mp3
+26:August Burns Red/Leveler (Deluxe Edition)/16 - Empire (Midi).mp3
+27:August Burns Red/Leveler (Deluxe Edition)/07 - 40 Nights.mp3
 playlist_end

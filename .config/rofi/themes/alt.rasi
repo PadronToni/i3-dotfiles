@@ -39,7 +39,7 @@ mainBorder {
     border-radius:      6px;
     font:               "FontAwesome 8"; 
     str:                "";
-    text-color:         #ceb5ce;
+    text-color:         #75525E;
     background-color:   @defaultBg;
     expand:             false;
 }

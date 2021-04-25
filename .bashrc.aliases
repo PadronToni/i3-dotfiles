@@ -2,23 +2,38 @@
 # ~/.bashrc.aliases
 #
 
-# -----------------------------------------------------------
-# VARIABLES
-# -----------------------------------------------------------
+# =====================
+# Variables
+# =====================
 
-# -----------------------------------------------------------
-# ALIAS
-# -----------------------------------------------------------
+# =====================
+# Aliases
+# =====================
 
 # Various
 alias la='ls --color=auto -l -a'
 alias cl='clear'
 alias nuke='rm -rf'
-alias dp="(urxvt &) 1>/dev/null"
-alias tpt="cd ~/projects/CSDealer/templates; la"
-alias conf="cd ~/.config; la"
+alias dp="(alacritty &) 1>/dev/null"
+alias tpt="cd ~/.scripts/CSDealer/templates; la"
+alias conf="cd ~/.config"
+alias urlserv="ssh url@167.86.80.235"
+alias wishlist="typora ~/Documenti/listadesideri.md &"
+
+# Git
+alias gout='git checkout'
+alias getch='git fetch'
+alias gatus='git status'
+alias giff='git diff'
+alias gadd='git add .'
+alias glog='git log'
+# alias commit='git commit'
+alias gammit='git add . && git commit'
+alias gammish='git add . && git commit && git push'
+
 
 # Color Scripts
+alias csdealer='~/.scripts/CSDealer/./csdealer'
 # alias colorbar='~/.scripts/./colorbar.sh'
 # alias colorpanes='~/.scripts/./colorpanes.sh'
 # alias colorblocks='~/.scripts/./colorblocks.sh'

@@ -1,7 +1,23 @@
 #!/bin/bash
 
-pidof dunst && killall dunst
+# Flags parsing
+while test $# -gt 0; do
+    case "$1" in
+    -v|--verbose)
+        pappa="sas"
+        break
+    ;;
+    *)
+        break
+    ;;
+    esac
+done
+
+pidof dunst && killall dunst  
 dunst &
 
-pidof dunst && notify-send "Dunst" "dunst has been reloaded"
+if [ -n "$pappa" ] 
+then 
+    pidof dunst && notify-send "Dunst" "dunst has been reloaded"
+fi
 

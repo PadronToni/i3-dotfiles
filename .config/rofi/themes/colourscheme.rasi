@@ -1,0 +1,394 @@
+configuration {
+    fake-transparency:  true;
+    fake-background:    "background";
+    scroll-method:      1;
+}
+
+* {
+    windowBg:           #23232380;
+}
+
+#window {
+    fullscreen:         true;
+    orientation:        horizontal;
+    padding:            5% 0;
+    background-color:   @windowBg;
+    children: [ dummy, mainbox, dummy ];
+}
+
+#mainbox {
+    orientation:        vertical;
+    spacing:            5px;
+    expand:             false;
+    children: [ horibox ];
+}
+
+#horibox {
+    orientation:        horizontal;
+    spacing:            5px;
+    children: [ listBox, messageBox, csBox ];
+}
+
+#listBox {
+    width:              31.1em;
+    expand:             false;
+    children:   [ inputbar, textbox-listHeader, listview, textbox-listDescription ];
+}
+
+#messageBox {
+    width:              20em;
+    expand:             false;
+    children:   [ message ];
+}
+#message {
+    margin:             0;
+    padding:            15px;
+    border-radius:      6px;
+    background-color:   @defaultBg;
+}
+
+// inputbarBorder ------------------------------------------------
+
+#inputbarBorder {
+    orientation:        horizontal;
+    margin:             0;
+    border-radius:      6px;
+    expand:             false;
+    children: [  textbox-csswitcher, filler ];
+}
+
+#textbox-csswitcher {
+    padding:            15px;
+    str:                "Colour Scheme Switcher";
+    background-color:   @defaultBg;
+    expand:             true;
+}
+
+#filler {
+    background-color:   @defaultBg;
+    expand:             true;
+}
+
+#inputbar {
+    margin:             0 0 5px 0;
+    border-radius:      6px;
+    expand:             false;
+}
+
+#entry {
+    width:              15em;
+    padding:            15px;
+    expand:             false;
+}
+
+#textbox-search {
+    padding:            15px;
+    border-radius:      0;
+    str:                "";
+}
+
+//  Listview    --------------------------------------------
+#textbox-listHeader {
+    padding:            15px;
+    border-radius:      6px 6px 0 0;
+    font:               "RobotoMonoNerdFont 8";
+    str:                "File name                     Preview";
+    background-color:   #232323;
+    expand:             false;
+}
+
+#textbox-listDescription {
+    margin:             5px 0 0 0;
+    padding:            15px;
+    border-radius:      6px;
+    font:               "RobotoMonoNerdFont 8";
+    str:                "choose from the list of colour schemes available in your system";
+    background-color:   #232323;
+    expand:             false;
+}
+
+#listview {
+    lines:              10;
+    margin:             0;
+    padding:            1 0 0 0;
+    border-radius:      0 0 6px 6px;
+    background-color:   @semitraBg;
+    expand:             true;
+}
+
+#element {
+    orientation:        vertical;
+    padding:            0;
+    border-radius:      0;
+    expand:             true;
+}
+
+#element-text {
+    padding:            15px;
+    vertical-align:     0.5;
+    expand:             true;
+}
+
+// Color Scheme ----------------------------------
+#csBox {
+    orientation:        vertical;
+    margin:             0;
+    border-radius:      6px;
+    expand:             false;
+    children:           [ textbox-csHeader, csPreview ];
+}
+#textbox-csHeader {
+    padding:            15px;
+    border-radius:      6px 6px 0 0;
+    font:               "RobotoMonoNerdFont bold 8";
+    str:                "";
+    horizontal-align:   0.5;
+    expand:             false;
+    background-color:   @defaultBg;
+}
+#csPreview {
+    orientation:        vertical;
+    padding:            15px;
+    spacing:            1;
+    border-radius:      0 0 6px 6px;
+    background-color:   @semitraBg;
+    expand:             false;
+    children:           [ color-row0, color-row1, color-row2, color-row3, color-row4, color-row5, color-row6, color-row7, color-row8 ];
+}
+#color-row0 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-bg, textbox-fg ];
+}
+#color-row1 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color0, textbox-color8 ];
+}
+#color-row2 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color1, textbox-color9 ];
+}
+#color-row3 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color2, textbox-color10 ];
+}
+#color-row4 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color3, textbox-color11 ];
+}
+#color-row5 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color4, textbox-color12 ];
+}
+#color-row6 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color5, textbox-color13 ];
+}
+#color-row7 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color6, textbox-color14 ];
+}
+#color-row8 {
+    orientation:        horizontal;
+    spacing:            1;
+    expand:             false;
+    children:           [ textbox-color7, textbox-color15 ];
+}
+
+// -----------------------------
+
+#textbox-bg {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "BG";
+    horizontal-align:   0.5;
+	text-color:   	    #a0a0a0;
+	background-color: 	#232323;
+    expand:             false;
+}
+#textbox-fg {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "FG";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#a0a0a0;
+    expand:             false;
+}
+#textbox-color0 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "0";
+    horizontal-align:   0.5;
+	text-color:   	    #a0a0a0;
+	background-color: 	#303030;
+    expand:             false;
+}
+#textbox-color8 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "8";
+    horizontal-align:   0.5;
+	text-color:   	    #a0a0a0;
+	background-color: 	#686868;
+    expand:             false;
+}
+#textbox-color1 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "1";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#d370a3;
+    expand:             false;
+}
+#textbox-color9 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "9";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#ffa7da;
+    expand:             false;
+}
+#textbox-color2 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "2";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#6d9e3f;
+    expand:             false;
+}
+#textbox-color10 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "10";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#a3d572;
+    expand:             false;
+}
+#textbox-color3 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "3";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#b58858;
+    expand:             false;
+}
+#textbox-color11 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "11";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#efbd8b;
+    expand:             false;
+}
+#textbox-color4 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "4";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#6095c5;
+    expand:             false;
+}
+#textbox-color12 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "12";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#98cbfe;
+    expand:             false;
+}
+#textbox-color5 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "5";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#ac7bde;
+    expand:             false;
+}
+#textbox-color13 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "13";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#e5b0ff;
+    expand:             false;
+}
+#textbox-color6 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "6";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#3ba275;
+    expand:             false;
+}
+#textbox-color14 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "14";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#75daa9;
+    expand:             false;
+}
+#textbox-color7 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "7";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#cfcfcf;
+    expand:             false;
+}
+#textbox-color15 {
+    padding:            1.2em 0;
+    width:              7em;
+    font:               "RobotoMonoNerdFont bold 10";
+    str:                "15";
+    horizontal-align:   0.5;
+	text-color:   	    #232323;
+	background-color: 	#ffffff;
+    expand:             false;
+}

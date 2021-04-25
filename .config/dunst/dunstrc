@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-5+5"
+    geometry = "300x5-5+40"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -48,23 +48,23 @@
     # to the font height and padding.
     notification_height = 0
 
+    # Padding between text and separator.
+    padding = 15
+
+    # Horizontal padding.
+    horizontal_padding = 15
+
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
-
-    # Padding between text and separator.
-    padding = 10
-
-    # Horizontal padding.
-    horizontal_padding = 10
+    separator_height = 1
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#3d3d3d"
+    frame_color = "#303030"
 
     # Define a color for the separator.
     # possible values are:
@@ -155,18 +155,18 @@
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/zafiro-icon-theme/status/22:/usr/share/icons/zafiro-icon-theme/devices/48
 
     ### History ###
 
@@ -276,23 +276,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#292929"
+    background = "#232323"
     foreground = "#cfcfcf"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#292929"
-    foreground = "#a9a9a9"
-    timeout = 5
+    background = "#232323"
+    foreground = "#a0a0a0"
+    timeout = 8
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#292929"
-    foreground = "#ffbbb2"
-    frame_color = "#ffbbb2"
+    background = "#232323"
+    foreground = "#ffa7da"
+    frame_color = "#ffa7da"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon

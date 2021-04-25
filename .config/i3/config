@@ -3,15 +3,16 @@
 # ----------
 
 # Mod key
-set $mod Mod1
-set $mod-mpd Mod4 + Shift
+set $mod Mod4
+set $mod-rofi Mod1
+set $mod-mpd Mod1 + Shift
 
 # Fonts
 set_from_resource $font-regular   i3wm.font   monospace regular 20
 
 # Colors
 set_from_resource $bg-color             i3wm.background   #ffffff
-set_from_resource $accent-color         i3wm.color3       #000000
+set_from_resource $accent-color         i3wm.color11      #000000
 set_from_resource $text-color           i3wm.foreground   #eeeeee
 set_from_resource $inactive-color       i3wm.color0       #000000
 set_from_resource $inactive-text-color  i3wm.color15      #000000
@@ -19,29 +20,35 @@ set_from_resource $urgent-color         13wm.color9       #dddddd
 set_from_resource $indicator-color      13wm.color10      #dddddd
 
 # Applications
-set $terminal           urxvtc
-set $fm                 pcmanfm-qt
+set $terminal           alacritty
+set $fm                 pcmanfm
 set $calculator         galculator
 #------------------------------------
+
+
+
 
 
 # --------------------
 # WINDOW PROPERTIES
 # --------------------
 
-default_border pixel 0
-hide_edge_borders smart
+default_border pixel 1
+# hide_edge_borders smart
 title_align center
 floating_minimum_size 75 x 50
 # floating_maximum_size 1320 x 700
 
 # Window Colors
 #                          border              background          text                   indicator
-client.focused             $bg-color           $bg-color           $text-color            $indicator-color
+client.focused             $accent-color       $accent-color       $bg-color              $indicator-color
 client.unfocused           $inactive-color     $inactive-color     $inactive-text-color   $indicator-color
 client.focused_inactive    $inactive-color     $inactive-color     $inactive-color        $indicator-color
 client.urgent              $urgent-color       $urgent-color       $text-color            $indicator-color
 #----------------------------------------------------------------------------------------------------
+
+
+
 
 
 # ------
@@ -67,6 +74,9 @@ bindsym $mod+Shift+minus gaps inner current minus 5
 #--------------------------------------------------------
 
 
+
+
+
 # -------
 # FONT
 # ------
@@ -75,7 +85,7 @@ font pango: $font-regular
 #------------------------
 
 
-#-----------------------------------------------
+
 
 
 # -------------
@@ -138,8 +148,9 @@ assign [class="Lxappereance"]               $ws9
 assign [class="etcher-electron"]            $ws0
 assign [class="Tixati"]                     $ws0
 assign [class="libreoffice-writer"]         $wsi
-assign [class="Pulseaudio-equalizer-gtk"]   $wsp
-assign [class="Pavucontrol"]                $wsp
+# assign [class="Pulseaudio-equalizer-gtk"]   $wsp
+for_window [class="Pavucontrol"]            floating enable
+for_window [class="Microsoft Teams Notification"] floating enable
 
 # Gaps
 workspace $ws8 gaps outer 36
@@ -147,6 +158,9 @@ workspace $ws9 gaps outer 36
 workspace $ws0 gaps outer 36
 workspace $wsp gaps outer 36
 #--------------------------------------------------------
+
+
+
 
 
 # -----------------------------
@@ -192,7 +206,7 @@ bindsym $mod+a layout tabbed
 bindsym $mod+e layout toggle split
 
 # split orientation
-bindsym $mod+s split toggle; exec notify-send "I3wm" "Layout orientation changed" -t 2000
+bindsym $mod+s split toggle; exec notify-send "I3wm" "Layout orientation changed" -t 3000
 
 # Scratchpad
 bindsym $mod+x          scratchpad show
@@ -200,56 +214,94 @@ bindsym $mod+Shift+x    move scratchpad
 #--------------------------------------------------------
 
 
+
+
+
 # --------------------- 
 # PERSONAL KEYBINDINGS
 # ---------------------
+
+# xdotool
+bindsym $mod+n exec xdotool mousedown 1; exec notify-send "Xdotool" "Mouse left-click hold mode: <span font_weight='ultrabold'>ON</span> \n\nLeft-click again to turn off" -t 10000
 
 # polybar
 bindsym $mod+z exec polybar-msg cmd toggle
 
 # dunst
-bindsym $mod+d  exec "~/.scripts/dunstreload"
+bindsym $mod+d  exec "~/.scripts/dunstreload -v"
+
 # App shortcuts
 bindsym $mod+Return exec $terminal
 bindsym $mod+Shift+Return exec $fm
+bindsym $mod+Shift+s exec thunar "Immagini/Sfondi"
 bindsym XF86Calculator exec $calculator
+bindsym $mod+t exec "urxvt -depth 32 -bg rgba:0000/0000/1111/0000 -borderColor rgba:0000/0000/1111/0000"
 
 # mpd bindings
 bindsym XF86AudioPlay exec mpc -q toggle
-bindsym $mod-mpd+space exec mpc -q toggle
-bindsym $mod-mpd+s exec mpc -q stop
-bindsym $mod-mpd+n exec mpc -q next
-bindsym $mod-mpd+p exec mpc -q prev
-bindsym $mod-mpd+h exec mpc -q seek -00:00:10
-bindsym $mod-mpd+l exec mpc -q seek +00:00:10
+bindsym XF86AudioPrev exec mpc -q prev
+bindsym XF86AudioNext exec mpc -q next
+bindsym Shift + XF86AudioPrev exec mpc -q seek -00:10
+bindsym Shift + XF86AudioNext exec mpc -q seek +00:10
+
+bindsym $mod-mpd + space exec mpc -q toggle
+bindsym $mod-mpd + s exec mpc -q stop
+bindsym $mod-mpd + p exec mpc -q prev
+bindsym $mod-mpd + n exec mpc -q next
+bindsym $mod-mpd + r exec mpc -q seek 00:00
+bindsym $mod-mpd + h exec mpc -q seek -00:10
+bindsym $mod-mpd + l exec mpc -q seek +00:10
+bindsym $mod-mpd + minus exec mpc -q volume -10
+bindsym $mod-mpd + plus exec mpc -q volume +10
+
+# Various
+
+
+
+
 
 # --------------
 # rofi bindings
 # --------------
 
+# xdotool menu
+bindsym $mod-rofi+x exec ~/.config/rofi/scripts/xdotool.sh 
+
+# keymaps menu
+bindsym $mod-rofi+t exec ~/.config/rofi/scripts/keymaps.sh 
+
 # screenshot
 bindsym Print exec ~/.config/rofi/scripts/scrotmenu.sh 
+bindsym $mod-rofi+s exec ~/.config/rofi/scripts/scrotmenu.sh 
 bindsym Shift + Print exec scrot ~/Immagini/Screenshots/screenshot_%F_%H%M%S.png
 
 # app launcher 
-bindsym Mod4+a exec rofi -theme "themes/apps.rasi" -show combi
+bindsym $mod-rofi+a exec rofi -theme "themes/apps.rasi" -columns 5 -show drun
+bindsym XF86LaunchB exec rofi -theme "themes/apps.rasi" -columns 5 -show drun
+
+# wallpaper setter 
+# bindsym $mod-rofi+s exec ~/.config/rofi/scripts/wpsetter.sh
 
 # window finder
-bindsym Mod4+w exec rofi -lines 5 -width 100 -show window
+bindsym $mod-rofi+w exec rofi -lines 5 -width 100 -show window
+bindsym XF86LaunchA exec rofi -lines 5 -width 100 -show window
 
 # power menu
-bindsym Mod4+z exec ~/.config/rofi/scripts/power.sh 
+bindsym $mod-rofi+z exec ~/.config/rofi/scripts/power.sh 
 bindsym XF86Sleep exec ~/.config/rofi/scripts/power.sh 
 
 # colorscheme manager
-bindsym Mod4+c exec ~/.config/rofi/scripts/colorschemes.sh
+bindsym $mod-rofi+c exec ~/.config/rofi/scripts/colorschemes.sh
 
 # brightness manager
-bindsym Mod4 + b exec rofi -modi "br:~/.config/rofi/scripts/brightness.sh" -show br
+bindsym $mod-rofi + b exec rofi -modi "br:~/.config/rofi/scripts/brightness.sh" -show br
 
 # xrandr manager
-bindsym Mod4+m exec ~/.config/rofi/scripts/xrandrmenu.sh 
+bindsym $mod-rofi+m exec ~/.config/rofi/scripts/xrandrmenu.sh 
 #--------------------------------------------------------
+
+
+
 
 
 # -----------------
@@ -296,15 +348,19 @@ for_window [class="Xfce4-appfinder"] floating enable
 # Redirect sound to headphones
 #bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
+
+
+
+
 # ---------------------------------------------------
 # AUTO STARTUP
 # ---------------------------------------------------
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id "nitrogen --restore"
-exec --no-startup-id "dunst"
+exec --no-startup-id dunst
+exec --no-startup-id mpd
 exec --no-startup-id udiskie
-exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id xset -b s off -dpms
+exec --no-startup-id "xset -b s off -dpms"
 
 exec_always --no-startup-id "picom --experimental-backends"
 exec_always --no-startup-id nm-applet

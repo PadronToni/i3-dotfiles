@@ -26,6 +26,7 @@ nnoremap tn :tabnew<Space>
 nnoremap tj :tabprev<CR>
 nnoremap tk :tabnext<CR>
 nnoremap cl :close!<CR>
+:imap jj <Esc>
 
 
 " Gui

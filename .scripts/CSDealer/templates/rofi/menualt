@@ -1,0 +1,73 @@
+[variables]
+CSDdir = ~/.config/rofi/themes/menulistalt.rasi
+[content]
+configuration {
+    fake-transparency:  true; 
+    fake-background:    "background";
+}
+
+* {
+    windowBg:           @color0@a0;
+}
+
+#window {
+    fullscreen:         true;
+    children:   [ dummy, mainbox, dummy ];
+}
+
+#mainbox {
+    margin:             0 25%;
+    spacing:            @mar@;
+    expand:             false;
+    children:   [ textbox-title, listview ];
+}
+
+//  Inputbar  ----------------------------------------------
+
+#inputbarBorder {
+    margin:             0;
+    orientation:        horizontal;
+    expand:             false;
+    children: [  textbox-title, inputbar ];
+}
+#inputbar {
+    border-radius:      0 @radius@ @radius@ 0;
+    background-color:   @semitraBg;
+    expand:             true;
+    children:   [ textbox-search, entry ];
+}
+#case-indicator {
+    margin:             0 @mar@ 0 0;
+}
+#entry {
+    expand:             true;
+    padding:            @inPad@;
+}
+#textbox-search {
+    padding:            @inPad@ @pad@ @inPad@ @pad@;
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+#textbox-title {
+    margin:             @mar@ @mar@ 0 @mar@;
+    padding:            @inPad@ @pad@ @inPad@ @pad@;
+    border-radius:      @radius@;
+    font:               "@font@ @fontSize@";
+    str:                "";
+    background-color:   @defaultBg;
+    expand:             false;
+}
+
+//  Listview  ----------------------------------------------
+
+#listview {
+    padding:            0;
+    border-radius:      @radius@;
+    expand:             false;
+}
+
+#element-text {
+    horizontal-align:   0.5;
+}

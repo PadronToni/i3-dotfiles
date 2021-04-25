@@ -3,24 +3,31 @@ configuration {
     fake-background:    "background";
 }
 * {
-    font:               "RobotoMonoNerdFont 20";
-    windowBg:           #292929bb;
+    font:               "RobotoMonoNerdFont 18";
+    windowBg:           #303030a0;
 }
 
 #window {
     fullscreen:         true;
-    location:           center;
-    anchor:             center;
+    orientation:        horizontal;
     background-color:   @windowBg;
     children: [ dummy, mainbox, dummy ];
 }
 
 #mainbox {
-    margin:             0;
-    children:   [ textBorder, listview ];
+    orientation:        vertical;
+    expand:             false;
+    children: [ titleBox, listview, dummy ];
 }
 
-#textBorder {
+// Title ---------------------
+
+#titleBox {
+    orientation:        vertical;
+    expand:             true;
+    children:   [ dummy, titleBorder ];
+}
+#titleBorder {
     orientation:        horizontal;
     margin:             0 0 5px 0;
     border-radius:      6px;
@@ -39,21 +46,24 @@ configuration {
 
 //  Listview    --------------------------------------------
 #listview {
-    margin:             0;
     columns:            100;
     lines:              1;
+    margin:             0;
+    padding:            0;
     border-radius:      6px;
     background-color:   @semitraBg;
     expand:             false;
 }
 
 #element {
-    orientation:        horizontal;
-    padding:            45px;
+    orientation:        vertical;
     border-radius:      6px;
-    expand:             true;
+    expand:             false;
 }
 
 #element-text {
+    padding:            1em;
     horizontal-align:   0.5;
+    vertical-align:     0.5;
+    expand:             false;
 }

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/barbarossa/.config/rofi/themes'
 let g:netrw_dirhist_3='/home/barbarossa/.config/rofi/scripts'
 let g:netrw_dirhist_2='/home/barbarossa'
 let g:netrw_dirhist_1='/home/barbarossa/.config/rofi/scripts'

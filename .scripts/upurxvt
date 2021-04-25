@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for i in $( pidof urxvt ); do
+    kill -s 1 $i
+done
+
