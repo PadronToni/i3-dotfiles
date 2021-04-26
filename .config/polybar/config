@@ -1,0 +1,151 @@
+; vim:ft=dosini
+
+; ██▓███   ▒█████   ██▓   ▓██   ██▓ ▄▄▄▄    ▄▄▄       ██▀███  
+; ▓██░  ██▒▒██▒  ██▒▓██▒    ▒██  ██▒▓█████▄ ▒████▄    ▓██ ▒ ██▒
+; ▓██░ ██▓▒▒██░  ██▒▒██░     ▒██ ██░▒██▒ ▄██▒██  ▀█▄  ▓██ ░▄█ ▒
+; ▒██▄█▓▒ ▒▒██   ██░▒██░     ░ ▐██▓░▒██░█▀  ░██▄▄▄▄██ ▒██▀▀█▄  
+; ▒██▒ ░  ░░ ████▓▒░░██████▒ ░ ██▒▓░░▓█  ▀█▓ ▓█   ▓██▒░██▓ ▒██▒
+; ▒▓▒░ ░  ░░ ▒░▒░▒░ ░ ▒░▓  ░  ██▒▒▒ ░▒▓███▀▒ ▒▒   ▓▒█░░ ▒▓ ░▒▓░
+; ░▒ ░       ░ ▒ ▒░ ░ ░ ▒  ░▓██ ░▒░ ▒░▒   ░   ▒   ▒▒ ░  ░▒ ░ ▒░
+; ░░       ░ ░ ░ ▒    ░ ░   ▒ ▒ ░░   ░    ░   ░   ▒     ░░   ░ 
+;              ░ ░      ░  ░░ ░      ░            ░  ░   ░     
+;                           ░ ░           ░                    
+
+;--------------------------------------------
+; Settings                                  ;
+;--------------------------------------------
+
+[global/wm]
+;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
+margin-top = 0
+margin-bottom = 0
+
+[settings]
+;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
+throttle-output=5
+throttle-output-for = 10
+screenchange-reload = true
+compositing-background = source
+compositing-foreground = source
+compositing-overline = source
+compositing-underline = source
+compositing-border = over
+
+; Define fallback values used by all module formats
+format-foreground = #FF0000
+format-background = #00FF00
+format-underline =
+format-overline =
+format-spacing =
+format-padding =
+format-margin =
+format-offset =
+
+;--------------------------------------------
+; Metrics                                   ;
+;--------------------------------------------
+
+[metrics]
+pad = 2
+
+;--------------------------------------------
+; Colors                                    ;
+;--------------------------------------------
+include-file = ~/.config/polybar/colors.ini
+
+;--------------------------------------------
+; bars                                      ;
+;--------------------------------------------
+
+;[bar/dummy]
+;enable-ipc      = true    
+;width           = 100%
+;height          = 29
+;bottom          = false
+;
+;background      = #00000000
+;
+;wm-name         = "polybar-dummy"
+
+; Modules -------------------------------
+; modules-center  = paddinglite2 
+
+[bar/topBar1]
+enable-ipc      = true    
+
+wm-restack      = i3
+width           = 100%
+height          = 30
+offset-x        = 0
+offset-y        = 0
+;override-redirect = false
+
+bottom          = false
+fixed-center    = true
+
+background      = #00000000
+foreground      = ${colors.fg}
+underline       = ${colors.bg}
+
+; Borders -------------------------------
+border-top-size = 5
+border-left-size = 5
+border-right-size = 5
+radius          = 0
+line-size       = 0
+
+; Fonts -------------------------------
+font-0 = "RobotoMono Nerd Font:size=8;2"
+font-1 = "symbola:size=8;2"
+font-2 = "RobotoMono Nerd Font:size=12;3"
+font-3 = "RobotoMono Nerd Font:size=10;3"
+
+; Modules -------------------------------
+modules-left    = mpd2 mpd
+modules-center  = paddinglite i3 paddinglite xwindow
+modules-right   = date time
+
+[bar/bottomBar]
+enable-ipc = true    
+
+bottom      = true
+width       = 100%
+height      = 25
+offset-x    = 0
+offset-y    = 0
+
+fixed-center = true
+
+background = ${colors.bg}
+; background = transparent
+foreground = ${colors.fg}
+
+; Borders -------------------------------
+border-right-size  = 5
+border-left-size  = 5
+
+spacing         = 0
+line-size       = 3
+
+font-0 = "RobotoMono Nerd Font:antialias=false:size=8;2"
+font-1 = "Symbola:size=8;2"
+font-2 = "Symbola:size=15;3"
+font-3 = "RobotoMono Nerd Font:antialias=false:size=10;3"
+
+
+; Modules -------------------------------
+modules-left    = pulseaudio backlight home  
+modules-center  = xkeyboard
+modules-right   = cpu ram battery essid 
+
+; System Tray ---------------------------
+tray-position   = right
+tray-detached   = false
+tray-padding    = 10
+tray-background = ${colors.trayBg}
+
+;--------------------------------------------
+; Modules                                   ;
+;--------------------------------------------
+include-file = ~/.config/polybar/modules.ini
+
